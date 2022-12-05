@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ATM Console App Revisited/1.0.0": {
+        "runtime": {
+          "ATM Console App Revisited.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ATM Console App Revisited/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.csproj.AssemblyReference.cache
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.AssemblyInfoInputs.cache
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.AssemblyInfo.cs
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/bin/Debug/net6.0/ATM Console App Revisited
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/bin/Debug/net6.0/ATM Console App Revisited.deps.json
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/bin/Debug/net6.0/ATM Console App Revisited.runtimeconfig.json
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/bin/Debug/net6.0/ATM Console App Revisited.dll
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/bin/Debug/net6.0/ATM Console App Revisited.pdb
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.dll
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/refint/ATM Console App Revisited.dll
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.pdb
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ATM Console App Revisited.genruntimeconfig.cache
+/Users/mac/Desktop/My c# Projects/My-Genaral-C--PROJECTS/ATM Console App Revisited/ATM Console App Revisited/obj/Debug/net6.0/ref/ATM Console App Revisited.dll

@@ -1,0 +1,82 @@
+﻿using System;
+namespace ATM_Console_App_Revisited
+{
+    public class StartingMoney
+    {
+        private static List<decimal>? _Amount;
+        public static decimal num;
+        public static decimal num2;
+        public static decimal num3;
+        public static decimal dept;
+        public static decimal dept2;
+        public static decimal dept3;
+
+
+
+        public StartingMoney()
+        {
+
+
+            _Amount = new List<decimal> { (decimal)Money.AmountUser1, (decimal)Money.AmountUser2, (decimal)Money.AmountUser3 };
+        }
+        public decimal First_Amount()
+        {
+            int Idx1 = (int)MyEnum.First;
+            decimal Total = TransferUser1() + _Amount[Idx1] - DebitUser1();
+            return Total;
+        }
+        public decimal Second_Amount()
+        {
+            int Idx2 = (int)MyEnum.Second;
+            decimal Total = TransferUser2() + _Amount[Idx2] - DebitUser2();
+            return Total;
+        }
+        public decimal Third_Amount()
+        {
+            int Idx3 = (int)MyEnum.Third;
+            decimal Total = TransferUser3() + _Amount[Idx3] - DebitUser3();
+            return Total;
+        }
+        enum MyEnum
+        {
+            First,
+            Second,
+            Third
+        }
+        enum Money
+        {
+            AmountUser1 = 20000000,
+            AmountUser2 = 12000000,
+            AmountUser3 = 2000400900
+        }
+
+
+
+
+        public static decimal TransferUser1()
+        {
+            return num;
+        }
+        public static decimal TransferUser2()
+        {
+            return num2;
+        }
+        public static decimal TransferUser3()
+        {
+            return num3;
+        }
+        public static decimal DebitUser1()
+        {
+
+            return dept;
+        }
+        public static decimal DebitUser2()
+        {
+            return dept2;
+        }
+        public static decimal DebitUser3()
+        {
+            return dept3;
+        }
+    }
+}
