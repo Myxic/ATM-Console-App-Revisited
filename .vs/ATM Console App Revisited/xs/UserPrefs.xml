@@ -1,4 +1,28 @@
 ﻿<Properties StartupConfiguration="{9C394864-3538-49D9-9EBD-09F70A5BA648}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ATM_220Console_220App_220Revisited FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ATM_220Console_220App_220Revisited PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ATM Console App Revisited/AtmOpearation.cs">
+    <Files>
+      <File FileName="ATM Console App Revisited/Program.cs" Line="35" Column="30" />
+      <File FileName="ATM Console App Revisited/StartingMoney.cs" Line="56" Column="8" />
+      <File FileName="ATM Console App Revisited/AtmOpearation.cs" Line="546" Column="14" />
+      <File FileName="ATM Console App Revisited/DelegateHandler.cs" Line="11" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ATM Console App Revisited" expanded="True">
+            <Node name="ATM Console App Revisited" expanded="True">
+              <Node name="AtmOpearation.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>

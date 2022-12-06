@@ -475,14 +475,14 @@ namespace ATM_Console_App_Revisited
 
         }
 
-        private decimal Balance()
+        public decimal Balance()
         {
 
             return _money;
 
         }
 
-        private decimal Withdrawal(decimal withdraw, string Fund, string NoFund)
+        public decimal Withdrawal(decimal withdraw, string Fund, string NoFund)
         {
             if (withdraw < Balance())
             {
@@ -499,7 +499,7 @@ namespace ATM_Console_App_Revisited
             return Balance();
         }
 
-        private decimal Transfer(string User, decimal transfer, string reciever, string Fund, string NoFund)
+        public decimal Transfer(string User, decimal transfer, string reciever, string Fund, string NoFund)
         {
 
 
