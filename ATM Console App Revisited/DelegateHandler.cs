@@ -19,7 +19,7 @@ namespace ATM_Console_App_Revisited
 
                 case "1":
                     Console.Clear();
-                    Console.Write($"{balance}. {Atm.Balance()}");
+                    Console.Write($"{balance} {Atm.Balance()}  ");
 
                     Console.Write($"{respone}\n ==> ");
                     string? Continue = Console.ReadLine();

@@ -3,7 +3,7 @@ namespace ATM_Console_App_Revisited
 {
     public class StartingMoney
     {
-        private static List<decimal>? _Amount;
+        private static List<decimal> _Amount;
         public static decimal num;
         public static decimal num2;
         public static decimal num3;
@@ -15,8 +15,6 @@ namespace ATM_Console_App_Revisited
 
         public StartingMoney()
         {
-
-
             _Amount = new List<decimal> { (decimal)Money.AmountUser1, (decimal)Money.AmountUser2, (decimal)Money.AmountUser3 };
         }
         public decimal First_Amount()
