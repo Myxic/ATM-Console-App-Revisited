@@ -19,7 +19,7 @@ namespace ATM_Console_App_Revisited
 
                 case "1":
                     Console.Clear();
-                    Console.Write($"{balance} {Atm.Balance()}");
+                    Console.Write($"{balance}. {Atm.Balance()}");
 
                     Console.Write($"{respone}\n ==> ");
                     string? Continue = Console.ReadLine();
@@ -41,7 +41,7 @@ namespace ATM_Console_App_Revisited
                     {
                         Console.Clear();
                         Console.WriteLine($"{withdraw}: {ErrorMessage}");
-                        //WithdrawFee = 0;
+
                         goto withdrawQuestion;
                     }
 

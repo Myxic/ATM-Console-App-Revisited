@@ -85,7 +85,7 @@ public class Program
                                 Login: Login,
                                  UsernameQuestion: "输入您现有的用户名:  ",
                                  ErrorUsername: "无效的用户名",
-                                 Lanaguage: "English");
+                                 Lanaguage: "Chinese");
                 break;
             case "4":
                 Console.Clear();
