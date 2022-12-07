@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using static ATM_Console_App_Revisited.AtmOpearation;
+using static ATM_Console_App_Revisited.DelegateOperation;
 
 namespace ATM_Console_App_Revisited;
 
@@ -50,7 +51,7 @@ public class Program
     public static void LanguageOptions(string? num)
     {
 
-
+        LanguageMenu LanguageMenuOtp = LanguageMenuOption.LanguageMenu;
         AtmOpearation ATM = new AtmOpearation();
         Dictionary<string, string> Login = new Dictionary<string, string>
             {   {"user1", "1234"},
@@ -65,14 +66,26 @@ public class Program
         switch (num)
         {
             case "1":
-                ATM.English(Login);
+                LanguageMenuOtp(
+                                Login: Login,
+                                 UsernameQuestion: "Enter Your username:  ",
+                                 ErrorUsername: "Invalid Username",
+                                 Lanaguage: "English");
 
                 break;
             case "2":
-                ATM.Russian(Login);
+                LanguageMenuOtp(
+                                Login: Login,
+                                 UsernameQuestion: "Введите ВАШЕ СУЩЕСТВУЮЩЕЕ имя пользователя:  ",
+                                 ErrorUsername: "Неверное имя пользователя",
+                                 Lanaguage: "Russian");
                 break;
             case "3":
-                ATM.Chinese(Login);
+                LanguageMenuOtp(
+                                Login: Login,
+                                 UsernameQuestion: "输入您现有的用户名:  ",
+                                 ErrorUsername: "无效的用户名",
+                                 Lanaguage: "English");
                 break;
             case "4":
                 Console.Clear();

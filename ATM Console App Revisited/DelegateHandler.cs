@@ -4,14 +4,18 @@ using System.Globalization;
 namespace ATM_Console_App_Revisited
 {
     public delegate void MyOperationDelegateHandler(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion);
-    public delegate void LanguageDelegate(Dictionary<string, string> Login, string Username,  string Greeting, string GreetingQuestion, string PinQuestion, string Logged);
+
+    public delegate void LanguageDelegate(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged);
+
+    public delegate void LanguageMenu(Dictionary<string, string> Login, string UsernameQuestion, string ErrorUsername, string Lanaguage);
+
     public class DelegateOperation
     {
-         public static void OperationOptions(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion)
+        public static void OperationOptions(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion)
 
         {
             AtmOpearation Atm = new();
-        Starting: Console.WriteLine($"{StartingQuestion}");
+        Starting: Console.Write($"{StartingQuestion}");
             string? Operation = Console.ReadLine();
 
             switch (Operation)
@@ -19,9 +23,9 @@ namespace ATM_Console_App_Revisited
 
                 case "1":
                     Console.Clear();
-                    Console.Write($"{balance}: ₦ {Atm.Balance()}");
+                    Console.Write($"{balance} {Atm.Balance()}");
 
-                    Console.WriteLine($"{respone}");
+                    Console.Write($"{respone}\n ==> ");
                     string? Continue = Console.ReadLine();
                     if (Continue.ToUpper() == "Y")
                     {
@@ -32,15 +36,17 @@ namespace ATM_Console_App_Revisited
                     break;
                 case "2":
                     Console.Clear();
-                    Console.Write($"{QuestionWithdraw} \n" +
+                    withdrawQuestion: Console.Write($"{QuestionWithdraw} \n" +
                                                 "₦ ");
                     string? withdraw = Console.ReadLine();
 
                     bool isFeeValid = decimal.TryParse(withdraw, out decimal WithdrawFee);
                     if (!isFeeValid || WithdrawFee < 0)
                     {
-
-                        WithdrawFee = 0;
+                        Console.Clear();
+                        Console.WriteLine($"{withdraw}: {ErrorMessage}");
+                        //WithdrawFee = 0;
+                        goto withdrawQuestion;
                     }
 
 
@@ -58,18 +64,20 @@ namespace ATM_Console_App_Revisited
                     break;
                 case "3":
                     Console.Clear();
-                    Console.WriteLine($"{QuestionTransfer}");
+                    TransferQuestion: Console.WriteLine($"{QuestionTransfer}");
                     Console.Write("₦ ");
                     string? transfer = Console.ReadLine();
                     Console.WriteLine($"{SenderQuestion}");
                     string? reciever = Console.ReadLine();
 
-                    //decimal TransferFee = Convert.ToDecimal(transfer);
+
                     bool isTransferFeeValid = decimal.TryParse(transfer, out decimal TransferFee);
                     if (!isTransferFeeValid || TransferFee < 0)
                     {
 
-                        TransferFee = 0;
+                        Console.Clear();
+                        Console.WriteLine($"{transfer}: {ErrorMessage}");
+                        goto TransferQuestion;
                     }
                     if (User == "user1")
                     {
@@ -112,7 +120,7 @@ namespace ATM_Console_App_Revisited
 
         class OperartionDelegate
         {
-            public static void Operation(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged )
+            public static void Operation(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged)
             {
                 int tries = 0;
                 int PossibleTries = 5;
@@ -131,9 +139,8 @@ namespace ATM_Console_App_Revisited
                     if (Password == Login[Username.ToLower()])
                     {
                         Console.Clear();
-                        Console.Write($"{Logged}\n"+
-                        $"{Greeting} {Username.ToUpper()} {GreetingQuestion}\n"+
-			                "==>  ");
+                        Console.Write($"{Logged}\n" +
+                        $"{Greeting} {Username.ToUpper()} {GreetingQuestion}\n");
 
                         if (Username.ToLower() == "user1")
                         {
@@ -163,49 +170,63 @@ namespace ATM_Console_App_Revisited
 
             }
         }
-        class Language 
-	    {
-            LanguageDelegate LangDele = OperartionDelegate.Operation;
+        public class LanguageMenuOption
+        {
+           
 
-            
 
-            public void English(Dictionary<string, string> Login, string Language)
+
+            public static  void LanguageMenu(Dictionary<string, string> Login, string UsernameQuestion, string ErrorUsername, string Lanaguage)
             {
-                switch (Language)
+                LanguageDelegate LangDele = OperartionDelegate.Operation;
+            start: Console.Write($"{UsernameQuestion} \n==>");
+
+                string? Username = Console.ReadLine();
+
+
+                if (Login.ContainsKey(Username.ToLower()))
                 {
-                    case "English":
-                    start:    Console.Write("Enter Your username:  ");
-
-                        string? Username = Console.ReadLine();
-
-
-                        if (Login.ContainsKey(Username.ToLower()))
-                        {
-
+                    switch (Lanaguage)
+                    {
+                        case "English":
                             LangDele(Login: Login,
-                                     Username: Username.ToLower(),
-                                     //Language: "English",
-                                     Greeting: "Welcome",
-                                     GreetingQuestion: "What Operation do you want to perform",
-                                     PinQuestion: "Enter Your Pin:  ",
-                                     Logged: "Logged in" );
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Invalid Username");
-                            goto start;
-                        }
-                        break;
-                    case "Russian":
-                        break;
-                    case "Chinese":
-                        break;
-                    default:
-                        break;
+                             Username: Username.ToLower(),
+                             Greeting: "Welcome",
+                             GreetingQuestion: "What Operation do you want to perform",
+                             PinQuestion: "Enter Your Pin:  ",
+                             Logged: "Logged in");
+                            break;
+                        case "Russian":
+                            LangDele(Login: Login,
+                             Username: Username.ToLower(),
+                             Greeting: "Добро пожаловать",
+                             GreetingQuestion: "Какую задачу вы хотите выполнить",
+                             PinQuestion: "Введите ВАШ СУЩЕСТВУЮЩИЙ PIN-код:  ",
+                             Logged: "Вы вошли");
+                            break;
+                        case "Chinese":
+                            LangDele(Login: Login,
+                             Username: Username.ToLower(),
+                             Greeting: "欢迎",
+                             GreetingQuestion: "你想执行什么任务",
+                             PinQuestion: "输入您现有的密码:  ",
+                             Logged: "登录");
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine($"{ErrorUsername}");
+                    goto start;
                 }
 
-               
+
+
+
             }
 
         }
