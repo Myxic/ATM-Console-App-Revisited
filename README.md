@@ -1,8 +1,8 @@
 # ATM-Console-App-Revisited
  * still incomplete
  ## About
- * This project is an upgrade to repo https://github.com/Myxic/MultilingualATM.git 
- * This project is  shorter but more effient than the one in repo https://github.com/Myxic/MultilingualATM.git 
+ * This project is an upgrade to repo https://github.com/Myxic/MultilingualATM.git .
+ * This project is  shorter but more effient than the one in repo https://github.com/Myxic/MultilingualATM.git .
  * This project minics the fuction of a simple Muilt Language Atm 
     * it has three languages namely English, Russian, Chinese.
     * it has three Already registered Users.
