@@ -612,111 +612,111 @@ namespace ATM_Console_App_Revisited
         }
 
     }
-    public interface UserInterface
-    {
-        void English();
-        void Russian();
-        void Chinese();
-    }
+    //public interface UserInterface
+    //{
+    //    void English();
+    //    void Russian();
+    //    void Chinese();
+    //}
 
 
-    public class ImplementInterface
-    {
-        public void English(UserInterface user)
-        {
+    //public class ImplementInterface
+    //{
+    //    public void English(UserInterface user)
+    //    {
 
-        }
-        public void Russian(UserInterface user)
-        {
+    //    }
+    //    public void Russian(UserInterface user)
+    //    {
 
-        }
-        public void Chinese(UserInterface user)
-        {
+    //    }
+    //    public void Chinese(UserInterface user)
+    //    {
 
-        }
-    }
-
-
-    public class IUser1 : UserInterface
-    {
+    //    }
+    //}
 
 
-
-        public void English()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
-            ATM.OperationOptions("user1", "Cash Balance  ₦", "Insufficient  Funds");
-        }
-
-        public void Russian()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
-            ATM.RussianOperationOptions("user1", "Денежных баланс  ₦", "Недостаточно средств");
-        }
-
-        public void Chinese()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
-            ATM.ChineseOperationOptions("user1", "现金余额  ₦", "不充足的资金");
-        }
-    }
+    //public class IUser1 : UserInterface
+    //{
 
 
-    public class IUser2 : UserInterface
-    {
 
-        public void English()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
-            ATM.OperationOptions("user2", "Cash Balance  ₦", "Insufficient  Funds");
-        }
+    //    public void English()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
+    //        ATM.OperationOptions("user1", "Cash Balance  ₦", "Insufficient  Funds");
+    //    }
 
-        public void Russian()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
-            ATM.RussianOperationOptions("user2", "Денежных баланс  ₦", "Недостаточно средств");
-        }
+    //    public void Russian()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
+    //        ATM.RussianOperationOptions("user1", "Денежных баланс  ₦", "Недостаточно средств");
+    //    }
 
-        public void Chinese()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
-            ATM.ChineseOperationOptions("user2", "现金余额  ₦", "不充足的资金");
-        }
-    }
+    //    public void Chinese()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.First_Amount());
+    //        ATM.ChineseOperationOptions("user1", "现金余额  ₦", "不充足的资金");
+    //    }
+    //}
 
 
-    public class IUser3 : UserInterface
-    {
+    //public class IUser2 : UserInterface
+    //{
+
+    //    public void English()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
+    //        ATM.OperationOptions("user2", "Cash Balance  ₦", "Insufficient  Funds");
+    //    }
+
+    //    public void Russian()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
+    //        ATM.RussianOperationOptions("user2", "Денежных баланс  ₦", "Недостаточно средств");
+    //    }
+
+    //    public void Chinese()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.Second_Amount());
+    //        ATM.ChineseOperationOptions("user2", "现金余额  ₦", "不充足的资金");
+    //    }
+    //}
 
 
-        public void English()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
-            ATM.OperationOptions("user3", "Cash Balance  ₦", "Insufficient  Funds");
-        }
-
-        public void Russian()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
-            ATM.RussianOperationOptions("user3", "Денежных баланс  ₦", "Недостаточно средств");
-        }
-
-        public void Chinese()
-        {
-            StartingMoney IntialAmount = new StartingMoney();
-            AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
-            ATM.ChineseOperationOptions("user3", "现金余额  ₦", "不充足的资金");
-        }
+    //public class IUser3 : UserInterface
+    //{
 
 
-    }
+    //    public void English()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
+    //        ATM.OperationOptions("user3", "Cash Balance  ₦", "Insufficient  Funds");
+    //    }
+
+    //    public void Russian()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
+    //        ATM.RussianOperationOptions("user3", "Денежных баланс  ₦", "Недостаточно средств");
+    //    }
+
+    //    public void Chinese()
+    //    {
+    //        StartingMoney IntialAmount = new StartingMoney();
+    //        AtmOpearation ATM = new AtmOpearation(IntialAmount.Third_Amount());
+    //        ATM.ChineseOperationOptions("user3", "现金余额  ₦", "不充足的资金");
+    //    }
+
+
+    //}
 
 }
