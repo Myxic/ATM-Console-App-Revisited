@@ -8,21 +8,7 @@ namespace ATM_Console_App_Revisited
         void Chinese();
     }
 
-    //public class ImplementInterface
-    //{
-    //    public void English(Users user)
-    //    {
 
-    //    }
-    //    public void Russian(Users user)
-    //    {
-
-    //    }
-    //    public void Chinese(Users user)
-    //    {
-
-    //    }
-    //}
 
 
     public class IUser1 : Users

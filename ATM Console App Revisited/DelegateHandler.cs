@@ -5,7 +5,7 @@ namespace ATM_Console_App_Revisited
 {
     public delegate void MyOperationDelegateHandler(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion);
 
-    public delegate void LanguageDelegate(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged);
+    public delegate void LanguageDelegate(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged, string Language);
 
     public delegate void LanguageMenu(Dictionary<string, string> Login, string UsernameQuestion, string ErrorUsername, string Lanaguage);
 
@@ -120,7 +120,7 @@ namespace ATM_Console_App_Revisited
 
         class OperartionDelegate
         {
-            public static void Operation(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged)
+            public static void Operation(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged, string Language)
             {
                 int tries = 0;
                 int PossibleTries = 5;
@@ -141,24 +141,58 @@ namespace ATM_Console_App_Revisited
                         Console.Clear();
                         Console.Write($"{Logged}\n" +
                         $"{Greeting} {Username.ToUpper()} {GreetingQuestion}\n");
-
-                        if (Username.ToLower() == "user1")
+                        switch (Language)
                         {
-                            User1.English();
+                            case "English":
+                                if (Username.ToLower() == "user1")
+                                {
+                                    User1.English();
+                                }
+                                else if (Username.ToLower() == "user2")
+                                {
+                                    User2.English();
+                                }
+                                else if (Username.ToLower() == "user3")
+                                {
+                                    User3.English();
+
+                                }
+                                break;
+                            case "Russian":
+                                if (Username.ToLower() == "user1")
+                                {
+                                    User1.Russian();
+                                }
+                                else if (Username.ToLower() == "user2")
+                                {
+                                    User2.Russian();
+                                }
+                                else if (Username.ToLower() == "user3")
+                                {
+                                    User3.Russian();
+
+                                }
+                                break;
+                            case "Chinese":
+                                if (Username.ToLower() == "user1")
+                                {
+                                    User1.Chinese();
+                                }
+                                else if (Username.ToLower() == "user2")
+                                {
+                                    User2.Chinese();
+                                }
+                                else if (Username.ToLower() == "user3")
+                                {
+                                    User3.Chinese();
+
+                                }
+                                break;
+                            default:
+                                break;
                         }
-                        else if (Username.ToLower() == "user2")
-                        {
-                            User2.English();
-                        }
-                        else if (Username.ToLower() == "user3")
-                        {
-                            User3.English();
-
-                        }
-
-
-
-                        break;
+                       
+        
                     }
                     else
                     {
@@ -194,7 +228,8 @@ namespace ATM_Console_App_Revisited
                              Greeting: "Welcome",
                              GreetingQuestion: "What Operation do you want to perform",
                              PinQuestion: "Enter Your Pin:  ",
-                             Logged: "Logged in");
+                             Logged: "Logged in",
+                              Language: "English");
                             break;
                         case "Russian":
                             LangDele(Login: Login,
@@ -202,7 +237,8 @@ namespace ATM_Console_App_Revisited
                              Greeting: "Добро пожаловать",
                              GreetingQuestion: "Какую задачу вы хотите выполнить",
                              PinQuestion: "Введите ВАШ СУЩЕСТВУЮЩИЙ PIN-код:  ",
-                             Logged: "Вы вошли");
+                             Logged: "Вы вошли",
+                             Language: "Russian");
                             break;
                         case "Chinese":
                             LangDele(Login: Login,
@@ -210,7 +246,9 @@ namespace ATM_Console_App_Revisited
                              Greeting: "欢迎",
                              GreetingQuestion: "你想执行什么任务",
                              PinQuestion: "输入您现有的密码:  ",
-                             Logged: "登录");
+                             Logged: "登录",
+                             Language: "Chinese"
+                                );
                             break;
                         default:
                             break;
