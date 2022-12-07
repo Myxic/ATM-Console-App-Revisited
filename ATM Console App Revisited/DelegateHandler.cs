@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Globalization;
+
 namespace ATM_Console_App_Revisited
 {
-    public delegate void MyDelegateHandler(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage);
-
+    public delegate void MyOperationDelegateHandler(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion);
+    public delegate void LanguageDelegate(Dictionary<string, string> Login, string Username,  string Greeting, string GreetingQuestion, string PinQuestion, string Logged);
     public class DelegateOperation
     {
-        public void OperationOptions(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion)
+         public static void OperationOptions(string User, string Fund, string NoFund, string StartingQuestion, string balance, string respone, string QuestionWithdraw, string QuestionTransfer, string ErrorMessage, string SenderQuestion)
 
         {
             AtmOpearation Atm = new();
@@ -108,20 +110,20 @@ namespace ATM_Console_App_Revisited
 
         }
 
-        class Delegate
+        class OperartionDelegate
         {
-            private void Operation(Dictionary<string, string> Login, string Username)
+            public static void Operation(Dictionary<string, string> Login, string Username, string Greeting, string GreetingQuestion, string PinQuestion, string Logged )
             {
                 int tries = 0;
                 int PossibleTries = 5;
-                UserInterface User1 = new IUser1();
-                UserInterface User2 = new IUser2();
-                UserInterface User3 = new IUser3();
+                Users User1 = new IUser1();
+                Users User2 = new IUser2();
+                Users User3 = new IUser3();
 
 
                 while (tries < PossibleTries)
                 {
-                    Console.Write("Enter Your Pin:  ");
+                    Console.Write($"{PinQuestion}");
 
                     string? Password = Console.ReadLine();
                     Console.WriteLine(Login[Username.ToLower()]);
@@ -129,8 +131,9 @@ namespace ATM_Console_App_Revisited
                     if (Password == Login[Username.ToLower()])
                     {
                         Console.Clear();
-                        Console.WriteLine("Logged in");
-                        Console.WriteLine($"Welcome {Username.ToUpper()} What Operation do you want to perform");
+                        Console.Write($"{Logged}\n"+
+                        $"{Greeting} {Username.ToUpper()} {GreetingQuestion}\n"+
+			                "==>  ");
 
                         if (Username.ToLower() == "user1")
                         {
@@ -159,6 +162,52 @@ namespace ATM_Console_App_Revisited
 
 
             }
+        }
+        class Language 
+	    {
+            LanguageDelegate LangDele = OperartionDelegate.Operation;
+
+            
+
+            public void English(Dictionary<string, string> Login, string Language)
+            {
+                switch (Language)
+                {
+                    case "English":
+                    start:    Console.Write("Enter Your username:  ");
+
+                        string? Username = Console.ReadLine();
+
+
+                        if (Login.ContainsKey(Username.ToLower()))
+                        {
+
+                            LangDele(Login: Login,
+                                     Username: Username.ToLower(),
+                                     //Language: "English",
+                                     Greeting: "Welcome",
+                                     GreetingQuestion: "What Operation do you want to perform",
+                                     PinQuestion: "Enter Your Pin:  ",
+                                     Logged: "Logged in" );
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Invalid Username");
+                            goto start;
+                        }
+                        break;
+                    case "Russian":
+                        break;
+                    case "Chinese":
+                        break;
+                    default:
+                        break;
+                }
+
+               
+            }
+
         }
     }
 }

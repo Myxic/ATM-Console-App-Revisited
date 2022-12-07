@@ -331,9 +331,9 @@ namespace ATM_Console_App_Revisited
         {
             int tries = 0;
             int PossibleTries = 5;
-            UserInterface User1 = new IUser1();
-            UserInterface User2 = new IUser2();
-            UserInterface User3 = new IUser3();
+            Users User1 = new IUser1();
+            Users User2 = new IUser2();
+            Users User3 = new IUser3();
 
 
             while (tries < PossibleTries)
@@ -381,9 +381,9 @@ namespace ATM_Console_App_Revisited
         {
             int tries = 0;
             int PossibleTries = 5;
-            UserInterface User1 = new IUser1();
-            UserInterface User2 = new IUser2();
-            UserInterface User3 = new IUser3();
+            Users User1 = new IUser1();
+            Users User2 = new IUser2();
+            Users User3 = new IUser3();
 
 
             while (tries < PossibleTries)
@@ -430,9 +430,9 @@ namespace ATM_Console_App_Revisited
         {
             int tries = 0;
             int PossibleTries = 5;
-            UserInterface User1 = new IUser1();
-            UserInterface User2 = new IUser2();
-            UserInterface User3 = new IUser3();
+            Users User1 = new IUser1();
+            Users User2 = new IUser2();
+            Users User3 = new IUser3();
 
 
             while (tries < PossibleTries)
