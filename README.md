@@ -12,7 +12,7 @@
 * Delegates
 * Events : still incomplete
 
-## Main Features
+## Other Features
 * Dictionary
 * Static methods 
 * Enums
